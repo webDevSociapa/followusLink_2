@@ -5,11 +5,12 @@ import { PersistGate } from "redux-persist/integration/react";
 import store, { persistor } from "../redux/store";
 import "../styles/globals.css";
 
+
 function AuthGuard({ children }) {
   const router = useRouter();
   const authToken = useSelector((state) => state.auth?.authToken);
   const isAuthenticated = !!authToken; // Converts truthy/falsy value into boolean
-  
+
 
   useEffect(() => {
     const protectedRoutes = ["/admin", "/template"]; // Add all protected routes here
